@@ -31,7 +31,7 @@ div#playlist {
 #playlist-nav p{
 	color: #60558F;
 	font-weight: 700;
-	font-size: 16px;
+	font-size: 17px;
 	display: inline-block;
 	position: relative;
 	left: 180px;
@@ -46,7 +46,7 @@ section#song-section {
 
 #song-section .song {
 	height: 80px;
-	border-bottom: 1px solid grey;
+	border-bottom: 1px solid #D3D5DE;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -64,15 +64,26 @@ div.social {
 }
 
 .fa-heart {
-	color: red;
+	color: #ED5E74;
 }
 
 .fa-share-alt {
-	color: blue;
+	color: #60558F;
 }
 
 .song-time-and-author {
 	width: 50%;
 	display: flex;
 	justify-content: flex-start;
+}
+
+.song-time-and-author p {
+	color: grey;
+}
+
+#song-title {
+	color: #60558F;
+	font-size: 16px;
+	font-weight: 600;
+	margin-top: 10px;
 }
