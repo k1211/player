@@ -10,7 +10,8 @@ body {
     align-items: center;
 }
 
-div#playlist {
+div#playlist, 
+div#player {
     width: 360px;
     height: 480px;
     background-color: #F3F4F8;

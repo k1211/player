@@ -12,16 +12,20 @@
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
-	<section id="playlist-section" hidden="false">
+	<section id="playlist-section">
+
 		<div id="playlist">
 			<nav id="playlist-nav">
-				<a> <img src="images/back-button.PNG" alt="back"></a>
+				<a onclick="showPlayer();"> <img src="images/back-button.PNG" alt="back"></a>
 				<p> Playlist </p>
 			</nav>
-			<section id="song-section">
-				
-			</section>
+			<section id="song-section"></section>
 		</div>
+
+		<div id="player" hidden>
+			<p id="piosenka"></p>
+		</div>
+
 	</section>
 	<script src="js/script.js"></script>
 </body>
