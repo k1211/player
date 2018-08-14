@@ -16,16 +16,23 @@ function init() {
 	for(let i = 0; i < songElements.length; i++) {
 		songElements[i].onclick = goToPlayer;
 	}
+
+	initPlayer(1);
+}
+
+
+function getSongById(songId) {
+	for (let i = 0; i < songs.length; i++) {
+		if (songs[i].id == songId) {
+			return songs[i]
+		}
+	}
 }
 
 
 function showPlayer(e) {
 	player = document.getElementById("player");
 	playlist = document.getElementById("playlist");
-	console.log("player" + player);
-		console.log("playlist" + playlist);
-
-
 	player.removeAttribute('hidden');
 	playlist.setAttribute('hidden', true);
 }
@@ -34,7 +41,6 @@ function showPlayer(e) {
 function showPlaylist(e) {
 	player = document.getElementById("player");
 	playlist = document.getElementById("playlist");
-
 	player.setAttribute('hidden', true);
 	playlist.removeAttribute('hidden');
 }
@@ -54,7 +60,8 @@ function getSongNumber(clickedElement) {
 
 
 function initPlayer(songNumber) {
-	document.getElementById("piosenka").innerHTML = "Piosenka numer " + songNumber;
+	let song = getSongById(songNumber);
+	generateNowPlaying(song);
 }
 
 function goToPlayer(e) {
@@ -84,4 +91,8 @@ function generateSongs() {
 	}
 }
 
+function generateNowPlaying(song) {
+    $("#now-playing")
+		.append('<div> <p id="song-title">' + song.title + '</p> <p id="song-author">' + song.author + '</p> </div>');
+}
 

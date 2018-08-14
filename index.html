@@ -13,17 +13,27 @@
 </head>
 <body>
 	<section id="playlist-section">
-
-		<div id="playlist">
+		<div id="playlist" hidden>
 			<nav id="playlist-nav">
 				<a onclick="showPlayer();"> <img src="images/back-button.PNG" alt="back"></a>
 				<p> Playlist </p>
 			</nav>
 			<section id="song-section"></section>
 		</div>
-
-		<div id="player" hidden>
-			<p id="piosenka"></p>
+		<div id="player">
+			<nav id="player-nav">
+				<div></div>
+				<div id='song-options'>
+					<a><i class="fas fa-arrows-alt"></i></a>
+					<a><i class="fas fa-arrows-alt"></i></a>
+					<a><i class="fas fa-arrows-alt"></i></a>
+				</div>
+				<a id='back-to-playlist' onclick="showPlaylist();"> <i class="fas fa-bars"></i> </a>
+			</nav>
+			<section class='details'>
+				<div id='now-playing'></div>
+				<div id='playing-options'></div>
+			</section>
 		</div>
 
 	</section>
