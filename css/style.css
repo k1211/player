@@ -3,6 +3,31 @@ body {
     background-size: cover;
 }
 
+::-webkit-scrollbar
+{
+  width: 7px;  
+}
+
+::-webkit-scrollbar-track
+{
+  background: rgba(243, 244, 248, 1);
+}
+
+::-webkit-scrollbar-thumb
+{
+	background: rgba(223,223,231, 0.8);
+  margin-right: 20px;
+  height: 70px;
+  border-radius: 13%;
+  /*background: rgba(255, 0, 0, 1);*/
+  /*background: rgba(243, 244, 248, 0);*/
+}
+
+
+
+
+
+
 #playlist-section {
 	min-height: 100%;
     display: flex;
@@ -15,6 +40,7 @@ div#playlist{
     height: 480px;
     background-color: #F3F4F8;
     border-radius: 20px;
+    padding-right: 20px;
 }
 
 #playlist-nav {
@@ -83,15 +109,13 @@ div.social {
 }
 
 .fa-arrows-alt {
-	font-size: 20px;
+	font-size: 18px;
 	color: white;
-	opacity: 1;
 }
 
 .fa-bars {
 	font-size: 20px;
-	color: grey;
-	opacity: 1;
+	color: #85889f;
 	margin-right: 20px;
 }
 
@@ -113,8 +137,7 @@ div#main-player{
 
 #player-nav,
 #now-playing {
-	background-color: #60558F;
-	opacity: 0.8;
+	background: rgba(95, 86, 143, 0.8);
 	height: 65px;
 	border-top-left-radius: 20px;
     border-top-right-radius: 20px;
@@ -159,7 +182,8 @@ div#main-player{
 	margin-right: -20px;
 }
 
-a div#share {
+a div#share,
+.console-button {
 	width: 36px;
 	height: 36px;
 	border-radius: 50%;
@@ -168,3 +192,79 @@ a div#share {
 	justify-content: center;
 	align-items: center;
 }
+
+.console-button {
+	background-color: #60558f;
+}
+
+.player-console {
+	width: 160px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.play-button-1 {
+	height: 64px;
+	width: 64px;
+	background-color: white;
+}
+
+.play-button-2 {
+	height: 54px;
+	width: 54px;
+	border: 1px solid white;
+}
+
+.fa-step-backward,
+.fa-step-forward {
+	color: white;
+	font-size: 16px;
+}
+
+.fa-play,
+.fa-pause {
+	color: white;
+	font-size: 20px;
+}
+
+#volume {
+	height: 7px;
+	background-color: white;
+}
+
+#set-volume {
+	background-color: #ED5E74;
+	width: 70%;
+	height: inherit;
+}
+
+#set-volume .fa-arrows-alt {
+	position: relative;
+	left: 0px;
+	top: 0px;
+	color: #60558f;
+}
+
+.volume-button {
+	width: 22px;
+	height: 22px;
+	border-radius: 50%;
+	background-color: white;
+	position: relative;
+	left: 243px;
+	top: -7px;
+}
+
+
+
+
+/*TO DO*/
+/*.gray-circle {
+	z-index: -1;
+	background-color: gray;
+	height: 50px;
+	width: 50px;
+	border-radius: 50%;
+	position: relative;
+}*/

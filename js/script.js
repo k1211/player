@@ -1,10 +1,11 @@
 var song1 = {"id": "0", "title" : "Still don't know", "author" : "Icona Pop", "time" : "3:16"};
-var song2 = {"id": "1", "title" : "Girlfriend", "author" : "Icona Pop", "time" : "3:16"};
-var song3 = {"id": "2", "title" : "Still don't know", "author" : "Icona Pop", "time" : "3:16"};
-var song4 = {"id": "3", "title" : "Still don't know", "author" : "Icona Pop", "time" : "3:16"};
-var song5 = {"id": "4", "title" : "Still don't know", "author" : "Icona Pop", "time" : "3:16"};
+var song2 = {"id": "1", "title" : "Love it", "author" : "Icona Pop", "time" : "2:35"};
+var song3 = {"id": "2", "title" : "Girlfriend", "author" : "Icona Pop", "time" : "2:50"};
+var song4 = {"id": "3", "title" : "We got the World", "author" : "Icona Pop", "time" : "3:07"};
+var song5 = {"id": "4", "title" : "Nights like this", "author" : "Icona Pop", "time" : "3:24"};
 
-var songs = [song1, song2, song3, song4, song5];
+var songs = [song1, song2, song3, song4, song5, song5, song5, song5, song5, song5, song5, song5, song5];
+var playing = false;
 
 $( document ).ready(init);
 
@@ -35,8 +36,6 @@ function showPlayer() {
 	if ($("#main-player").hasClass("hidden")) {
 		$("#main-player").removeClass("hidden");	
 	}
-	// document.getElementById("main-player").removeAttribute('hidden');
-	// document.getElementById("playlist").setAttribute('hidden', true);
 }
 
 
@@ -45,20 +44,20 @@ function showPlaylist() {
 	if ($("#main-player").hasClass("hidden")) {
 		$("#playlist").removeClass("hidden");	
 	}
-	// document.getElementById("playlist").removeAttribute('hidden');
-	// document.getElementById("main-player").setAttribute('hidden', true);
 }
 
 
 function getSongNumber(clickedElement) {
-	let condition = true;
-	while(condition) {
-		let parent = clickedElement.parentElement;
-		if (parent.className === "song") {
-			condition = false;
-			return parent.id;
+	if (clickedElement) {
+		let condition = true;
+		while(condition) {
+			let parent = clickedElement.parentElement;
+			if (parent.classList.contains('song')) {
+				condition = false;
+				return parent.id;
+			}
+			clickedElement = parent;
 		}
-		clickedElement = parent;
 	}
 }
 
@@ -106,7 +105,40 @@ function generateConsole(song) {
 	$("#playing-options").empty();
     $("#playing-options")
 		.append('<a><div id="share"><i class="fas fa-share-alt"></i></div></a>')
-		.append('<div>')
+		.append(
+			$('<div class="player-console">')
+			.append('<a onclick="playPreviousSong('+ song.id +')"><div class="console-button"><i class="fas fa-step-backward"></i></div></a>')
+			.append('<a onclick="controlPlaying()"><div class="console-button play-button-1">' + 
+							'<div class="console-button play-button-2"><i class="fas fa-play"></i></div>' + 
+							// TO DO '<div class="gray-circle"> </div>' +
+					'</div></a>')
+			.append('<a onclick="playNextSong('+ song.id +')"><div class="console-button"><i class="fas fa-step-forward"></i></div></a>')
+		)
 		.append('<a><div id="share"><i class="fas fa-heart"></i></div></a>');
 }
 
+function playNextSong(songId) {
+	let currentSong = songId + 1;
+	if (currentSong > songs.length-1) {
+		currentSong = songId;
+	}
+	initPlayer(currentSong);
+}
+
+function playPreviousSong(songId) {
+	let currentSong = songId - 1;
+	if (currentSong < 0) {
+		currentSong = songId;
+	}
+	initPlayer(currentSong);
+}
+
+function controlPlaying() {
+	if (playing) {
+		$('.play-button-2').html('<i class="fas fa-pause"></i>');
+		playing = false;
+	} else {
+		$('.play-button-2').html('<i class="fas fa-play"></i>');
+		playing = true;
+	}	
+}
