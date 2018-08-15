@@ -4,7 +4,7 @@ var song3 = {"id": "2", "title" : "Girlfriend", "author" : "Icona Pop", "time" :
 var song4 = {"id": "3", "title" : "We got the World", "author" : "Icona Pop", "time" : "3:07"};
 var song5 = {"id": "4", "title" : "Nights like this", "author" : "Icona Pop", "time" : "3:24"};
 
-var songs = [song1, song2, song3, song4, song5, song5, song5, song5, song5, song5, song5, song5, song5];
+var songs = [song1, song2, song3, song4, song5];
 var playing = false;
 
 $( document ).ready(init);
