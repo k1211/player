@@ -16,8 +16,8 @@ function init() {
 	for(let i = 0; i < songElements.length; i++) {
 		songElements[i].onclick = goToPlayer;
 	}
-
-	initPlayer(1);
+	initPlayer(0);
+	showPlaylist();
 }
 
 
@@ -30,19 +30,23 @@ function getSongById(songId) {
 }
 
 
-function showPlayer(e) {
-	player = document.getElementById("player");
-	playlist = document.getElementById("playlist");
-	player.removeAttribute('hidden');
-	playlist.setAttribute('hidden', true);
+function showPlayer() {
+	$("#playlist" ).addClass("hidden");
+	if ($("#main-player").hasClass("hidden")) {
+		$("#main-player").removeClass("hidden");	
+	}
+	// document.getElementById("main-player").removeAttribute('hidden');
+	// document.getElementById("playlist").setAttribute('hidden', true);
 }
 
 
-function showPlaylist(e) {
-	player = document.getElementById("player");
-	playlist = document.getElementById("playlist");
-	player.setAttribute('hidden', true);
-	playlist.removeAttribute('hidden');
+function showPlaylist() {
+	$("#main-player").addClass("hidden");
+	if ($("#main-player").hasClass("hidden")) {
+		$("#playlist").removeClass("hidden");	
+	}
+	// document.getElementById("playlist").removeAttribute('hidden');
+	// document.getElementById("main-player").setAttribute('hidden', true);
 }
 
 
@@ -62,6 +66,7 @@ function getSongNumber(clickedElement) {
 function initPlayer(songNumber) {
 	let song = getSongById(songNumber);
 	generateNowPlaying(song);
+	generateConsole(song);
 }
 
 function goToPlayer(e) {
@@ -92,7 +97,16 @@ function generateSongs() {
 }
 
 function generateNowPlaying(song) {
+	$("#now-playing").empty();
     $("#now-playing")
 		.append('<div> <p id="song-title">' + song.title + '</p> <p id="song-author">' + song.author + '</p> </div>');
+}
+
+function generateConsole(song) {
+	$("#playing-options").empty();
+    $("#playing-options")
+		.append('<a><div id="share"><i class="fas fa-share-alt"></i></div></a>')
+		.append('<div>')
+		.append('<a><div id="share"><i class="fas fa-heart"></i></div></a>');
 }
 
