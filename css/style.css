@@ -108,7 +108,7 @@ div.social {
 
 .fa-bars {
 	font-size: 20px;
-	color: #85889f;
+	color: #949494;
 	margin-right: 20px;
 }
 
@@ -130,7 +130,7 @@ div#main-player{
 
 #player-nav,
 #now-playing {
-	background: rgba(86, 81, 107, 0.5);
+	background: rgba(42, 34, 77, 0.65); 
 	height: 65px;
 	border-top-left-radius: 20px;
     border-top-right-radius: 20px;
