@@ -18,8 +18,8 @@ function init() {
 		songElements[i].onclick = goToPlayer;
 	}
 	initPlayer(0);
-	// showPlayer();
-	showPlaylist();
+	showPlayer();
+	// showPlaylist();
 }
 
 

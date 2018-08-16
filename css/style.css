@@ -103,8 +103,8 @@ div.social {
 	margin-top: 5px;
 }
 
-.fa-arrows-alt {
-	font-size: 18px;
+.fa-arrows-alt, .fa-share {
+	font-size: 14px;
 	color: white;
 }
 
@@ -231,30 +231,28 @@ a div#share,
 
 #volume {
 	height: 7px;
-	background-color: white;
+	background-color: #ED5E74;
+	display: flex;
 }
 
 #set-volume {
-	background-color: #ED5E74;
+	background-color: white;
 	width: 70%;
 	height: inherit;
 }
 
-#set-volume .fa-arrows-alt {
-	position: relative;
-	left: 0px;
-	top: 0px;
-	color: #60558f;
-}
 
-.volume-button {
+#volume-button {
 	width: 22px;
 	height: 22px;
 	border-radius: 50%;
+	color: #60558f;
 	background-color: white;
-	position: relative;
-	left: 243px;
-	top: -7px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: -7px;
+	margin-left: -11px;
 }
 
 .play-progress {
