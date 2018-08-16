@@ -18,6 +18,7 @@ function init() {
 		songElements[i].onclick = goToPlayer;
 	}
 	initPlayer(0);
+	// showPlayer();
 	showPlaylist();
 }
 
@@ -108,9 +109,9 @@ function generateConsole(song) {
 		.append(
 			$('<div class="player-console">')
 			.append('<a onclick="playPreviousSong('+ song.id +')"><div class="console-button"><i class="fas fa-step-backward"></i></div></a>')
-			.append('<a onclick="controlPlaying()"><div class="console-button play-button-1">' + 
+			.append('<a onclick="controlPlaying()"><div class="play-button-1">' + 
 							'<div class="console-button play-button-2"><i class="fas fa-pause"></i></div>' + 
-							// TO DO '<div class="gray-circle"> </div>' +
+							'<div class="play-progress"> </div>' +
 					'</div></a>')
 			.append('<a onclick="playNextSong('+ song.id +')"><div class="console-button"><i class="fas fa-step-forward"></i></div></a>')
 		)

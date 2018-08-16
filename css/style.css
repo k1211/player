@@ -5,20 +5,20 @@ body {
 
 ::-webkit-scrollbar
 {
-  width: 7px;  
+	width: 7px;  
 }
 
 ::-webkit-scrollbar-track
 {
-  background: rgba(243, 244, 248, 1);
+	background: rgba(243, 244, 248, 1);
 }
 
 ::-webkit-scrollbar-thumb
 {
-	background: rgba(223,223,231, 0.8);
-  margin-right: 20px;
-  height: 70px;
-  border-radius: 13%;
+	background: rgba(223,223,231, 1);
+	margin-right: 20px;
+	height: 70px;
+	border-radius: 13%;
 }
 
 #playlist-section {
@@ -40,15 +40,14 @@ div#playlist{
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	margin: 20px;
-	margin-right: 0px;
+	margin: 20px 0 0 20px;
 }
 
 
 #playlist-nav p{
 	color: #60558F;
 	font-weight: 700;
-	font-size: 17px;
+	font-size: 12px;
 }
 
 section#song-section {
@@ -77,10 +76,12 @@ div.social {
 }
 
 .fa-heart {
+	font-size: 12px;
 	color: #ED5E74;
 }
 
 .fa-share-alt {
+	font-size: 12px;
 	color: #60558F;
 }
 
@@ -92,13 +93,14 @@ div.social {
 
 .song-time-and-author p {
 	color: grey;
+	font-size: 8px;
 }
 
 .song-details p#song-title {
 	color: #60558F;
-	font-size: 16px;
+	font-size: 12px;
 	font-weight: 600;
-	margin-top: 10px;
+	margin-top: 5px;
 }
 
 .fa-arrows-alt {
@@ -200,13 +202,19 @@ a div#share,
 .play-button-1 {
 	height: 64px;
 	width: 64px;
+	border-radius: 50%;
 	background-color: white;
+	overflow: hidden;
 }
 
 .play-button-2 {
 	height: 54px;
 	width: 54px;
 	border: 1px solid white;
+	z-index: 999;
+	position: relative;
+	top: 5px;
+	left: 5px;
 }
 
 .fa-step-backward,
@@ -249,15 +257,20 @@ a div#share,
 	top: -7px;
 }
 
-
-
-
-/*TO DO*/
-/*.gray-circle {
-	z-index: -1;
-	background-color: gray;
-	height: 50px;
-	width: 50px;
+.play-progress {
+	background-color: #d3d5de;
+	height: 138px;
+	width: 138px;
 	border-radius: 50%;
 	position: relative;
-}*/
+	bottom: 124px;
+	left: 32px;
+}
+
+.white-shadower {
+	box-shadow: 0px -7px 25px 15px #f3f4f8;
+	background-color: #F3F4F8;
+	position: relative;
+	height: 10px;
+	margin: 0 25px;
+}
