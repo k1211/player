@@ -3,6 +3,8 @@ body {
     background-size: cover;
 }
 
+/*SCROLLBAR*/
+
 ::-webkit-scrollbar
 {
 	width: 7px;  
@@ -21,14 +23,17 @@ body {
 	border-radius: 13%;
 }
 
-#playlist-section {
+
+.playlist-section {
 	min-height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-div#playlist{
+/*PLAYLIST */
+
+div.playlist{
     width: 360px;
     height: 480px;
     background-color: #F3F4F8;
@@ -36,7 +41,9 @@ div#playlist{
     padding-right: 20px;
 }
 
-#playlist-nav {
+/*PLAYLIST - NAVIGATION*/
+
+.playlist-nav {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -44,18 +51,20 @@ div#playlist{
 }
 
 
-#playlist-nav p{
+.playlist-nav p{
 	color: #60558F;
 	font-weight: 700;
 	font-size: 12px;
 }
 
-section#song-section {
+/*PLAYLIST - SONGS */
+
+section.song-section {
 	overflow-y: scroll; 
 	height:380px;
 }
 
-#song-section .song {
+.song-section .song {
 	height: 80px;
 	border-bottom: 1px solid #D3D5DE;
 	display: flex;
@@ -96,7 +105,7 @@ div.social {
 	font-size: 8px;
 }
 
-.song-details p#song-title {
+.song-details p.song-title {
 	color: #60558F;
 	font-size: 12px;
 	font-weight: 600;
@@ -114,7 +123,9 @@ div.social {
 	margin-right: 20px;
 }
 
-div#main-player{
+/* PLAYER */
+
+div.main-player{
     width: 360px;
     height: 480px;
     background-color: #F3F4F8;
@@ -130,8 +141,8 @@ div#main-player{
 	display: none !important;
 }
 
-#player-nav,
-#now-playing {
+.player-nav,
+.now-playing {
 	background: rgba(42, 34, 77, 0.65); 
 	height: 65px;
 	border-top-left-radius: 20px;
@@ -141,25 +152,25 @@ div#main-player{
     align-items: center;
 }
 
-#now-playing {
+.now-playing {
 	border-radius: 0;
 	justify-content: center;
 }
 
-#now-playing div p{
+.now-playing div p{
 	color: white;
 	font-size: 15px;
 	font-weight: 600;
 	text-align: center;
 }
 
-#now-playing p#song-author{
+.now-playing p#song-author{
 	color: white;
 	font-size: 13px;
 	font-weight: 600;
 }
 
-#playing-options {
+.playing-options {
 	height: 135px;
 	background-color: #EEEFF6;
 	border-bottom-left-radius: 20px;
@@ -170,14 +181,14 @@ div#main-player{
     padding: 0 20px;
 }
 
-#song-options {
+.song-options {
 	width: 100px;
 	display: flex;
 	justify-content: space-between;
 	margin-right: -20px;
 }
 
-a div#share,
+a div.share,
 .console-button {
 	width: 36px;
 	height: 36px;
@@ -229,20 +240,20 @@ a div#share,
 	font-size: 20px;
 }
 
-#volume {
+.volume {
 	height: 7px;
 	background-color: #ED5E74;
 	display: flex;
 }
 
-#set-volume {
+.set-volume {
 	background-color: white;
 	width: 70%;
 	height: inherit;
 }
 
 
-#volume-button {
+.volume-button {
 	width: 22px;
 	height: 22px;
 	border-radius: 50%;

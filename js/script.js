@@ -12,14 +12,13 @@ $( document ).ready(init);
 
 function init() {
 	generateSongs();
-	let songElements = document.getElementsByClassName("song");
+	let songElements = document.querySelector(".song");
 	
 	for(let i = 0; i < songElements.length; i++) {
 		songElements[i].onclick = goToPlayer;
 	}
 	initPlayer(0);
 	showPlayer();
-	// showPlaylist();
 }
 
 
@@ -33,17 +32,17 @@ function getSongById(songId) {
 
 
 function showPlayer() {
-	$("#playlist" ).addClass("hidden");
-	if ($("#main-player").hasClass("hidden")) {
-		$("#main-player").removeClass("hidden");	
+	$(".playlist" ).addClass("hidden");
+	if ($(".main-player").hasClass("hidden")) {
+		$(".main-player").removeClass("hidden");	
 	}
 }
 
 
 function showPlaylist() {
-	$("#main-player").addClass("hidden");
-	if ($("#main-player").hasClass("hidden")) {
-		$("#playlist").removeClass("hidden");	
+	$(".main-player").addClass("hidden");
+	if ($(".main-player").hasClass("hidden")) {
+		$(".playlist").removeClass("hidden");	
 	}
 }
 
@@ -78,14 +77,14 @@ function goToPlayer(e) {
 
 function generateSongs() {
     for(let i = 0; i < songs.length; i++) {
-    	$("#song-section")
+    	$(".song-section")
 			.append(
 				$('<div class="song" id="' + songs[i].id+ '">')
 				.append(
 					$('<div class="song-details">')
 					.append($('<div class="song-time-and-author">')
-						.append('<p id="song-time">' + songs[i].time + ' &nbsp;|&nbsp; </p> <p id="song-author">' + songs[i].author + '</p> '))
-					.append($('<p id="song-title">' + songs[i].title + '</p> '))
+						.append('<p class="song-time">' + songs[i].time + ' &nbsp;|&nbsp; </p> <p class="song-author">' + songs[i].author + '</p> '))
+					.append($('<p class="song-title">' + songs[i].title + '</p> '))
 				)
 				.append(
 					$('<div class="social">')
@@ -97,15 +96,15 @@ function generateSongs() {
 }
 
 function generateNowPlaying(song) {
-	$("#now-playing").empty();
-    $("#now-playing")
-		.append('<div> <p id="song-title">' + song.title + '</p> <p id="song-author">' + song.author + '</p> </div>');
+	$(".now-playing").empty();
+    $(".now-playing")
+		.append('<div> <p class="song-title">' + song.title + '</p> <p class="song-author">' + song.author + '</p> </div>');
 }
 
 function generateConsole(song) {
-	$("#playing-options").empty();
-    $("#playing-options")
-		.append('<a><div id="share"><i class="fas fa-share-alt"></i></div></a>')
+	$(".playing-options").empty();
+    $(".playing-options")
+		.append('<a><div class="share"><i class="fas fa-share-alt"></i></div></a>')
 		.append(
 			$('<div class="player-console">')
 			.append('<a onclick="playPreviousSong('+ song.id +')"><div class="console-button"><i class="fas fa-step-backward"></i></div></a>')

@@ -12,37 +12,39 @@
 	<link rel="stylesheet" type="text/css" href="./css/style.css">
 </head>
 <body>
-	<section id="playlist-section">
-		<div id="playlist">
-			<nav id="playlist-nav">
-				<a onclick="showPlayer();"> <img src="./images/back-button.png" alt="back"></a>
+	<section class="playlist-section">
+		<div class="playlist">
+			<nav class="playlist-nav">
+				<a onclick="showPlayer();"> 
+                    <img src="./images/back-button.png" alt="back">
+                </a>
 				<p> Playlist </p>
 				<p style="width: 38px;"></p>
 			</nav>
-			<section id="song-section"></section>
+			<section class="song-section"></section>
 			<div class="white-shadower"></div>
 		</div>
-		<div id="main-player">
-			<nav id="player-nav">
+		<div class="main-player">
+			<nav class="player-nav">
 				<div style="width: 38px;"></div>
-				<div id='song-options'>
+				<div class='song-options'>
 					<a><i class="fas fa-share"></i></a>
 					<a><i class="fas fa-arrows-alt"></i></a>
 					<a><i class="fas fa-arrows-alt"></i></a>
 				</div>
-				<a id='back-to-playlist' onclick="showPlaylist();"> <i class="fas fa-bars"></i> </a>
+				<a class='back-to-playlist' onclick="showPlaylist();"> <i class="fas fa-bars"></i> </a>
 			</nav>
 			<section class='details'>
-				<div id='now-playing'></div>
-				<div id='volume'>
-					<div id="set-volume"></div>
+				<div class='now-playing'></div>
+				<div class='volume'>
+					<div class="set-volume"></div>
 					<div>
-						<div id="volume-button">
+						<div class="volume-button">
 							<i class="fas fa-volume-up"></i>
 						</div>
 					</div>
 				</div>
-				<div id='playing-options'></div>
+				<div class='playing-options'></div>
 			</section>
 		</div>
 	</section>
