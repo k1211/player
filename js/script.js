@@ -12,7 +12,7 @@ $( document ).ready(init);
 
 function init() {
 	generateSongs();
-	let songElements = document.querySelector(".song");
+	let songElements = document.getElementsByClassName("song");
 	
 	for(let i = 0; i < songElements.length; i++) {
 		songElements[i].onclick = goToPlayer;
@@ -114,7 +114,7 @@ function generateConsole(song) {
 					'</div></a>')
 			.append('<a onclick="playNextSong('+ song.id +')"><div class="console-button"><i class="fas fa-step-forward"></i></div></a>')
 		)
-		.append('<a><div id="share"><i class="fas fa-heart"></i></div></a>');
+		.append('<a><div class="share"><i class="fas fa-heart"></i></div></a>');
 }
 
 function playNextSong(songId) {
