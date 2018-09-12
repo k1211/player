@@ -7,16 +7,16 @@ var song5 = {"id": "4", "title" : "Nights like this", "author" : "Icona Pop", "t
 var songs = [song1, song2, song3, song4, song5];
 var playing = false;
 
-$( document ).ready(init);
 
+$(init);
 
 function init() {
 	generateSongs();
-	let songElements = document.getElementsByClassName("song");
-	
-	for(let i = 0; i < songElements.length; i++) {
-		songElements[i].onclick = goToPlayer;
-	}
+    
+    $( ".song" ).each(function( index ) {
+        $( this ).click(goToPlayer);
+    });
+    
 	initPlayer(0);
 	showPlayer();
 }
@@ -25,7 +25,7 @@ function init() {
 function getSongById(songId) {
 	for (let i = 0; i < songs.length; i++) {
 		if (songs[i].id == songId) {
-			return songs[i]
+			return songs[i];
 		}
 	}
 }
